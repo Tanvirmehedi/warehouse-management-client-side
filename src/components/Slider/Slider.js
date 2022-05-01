@@ -33,7 +33,7 @@ const Slider = () => {
         <div className="carousel-item active relative float-left w-full">
           <img
             src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
-            className="block w-full"
+            className="block w-full h-[90vh]"
             alt="..."
           />
           <div className="carousel-caption hidden md:block absolute text-center">
@@ -44,7 +44,7 @@ const Slider = () => {
         <div className="carousel-item relative float-left w-full">
           <img
             src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
-            className="block w-full"
+            className="block w-full h-[90vh]"
             alt="..."
           />
           <div className="carousel-caption hidden md:block absolute text-center">
@@ -55,7 +55,7 @@ const Slider = () => {
         <div className="carousel-item relative float-left w-full">
           <img
             src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
-            className="block w-full"
+            className="block w-full h-[90vh] "
             alt="..."
           />
           <div className="carousel-caption hidden md:block absolute text-center">
