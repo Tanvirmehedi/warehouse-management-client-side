@@ -4,6 +4,7 @@ import Home from "./components/Home/Home";
 import Items from "./components/Items/Items";
 import Login from "./components/Login/Login";
 import Navbar from "./components/Navbar/Navbar";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/items" element={<Items />} />
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>

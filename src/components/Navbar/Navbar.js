@@ -71,9 +71,11 @@ export default function Navbar({ fixed }) {
         lg:mt-0
         mr-1
       "
-              to="#"
+              to="/"
             >
-              <span>BookHouse</span>
+              <span className="text-xl font-bold text-slate-500">
+                BookHouse
+              </span>
             </Link>
             <ul className="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
               <li className="nav-item p-2">
@@ -95,7 +97,7 @@ export default function Navbar({ fixed }) {
               <li className="nav-item p-2">
                 <Link
                   className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-                  to="#"
+                  to="/team"
                 >
                   Team
                 </Link>
