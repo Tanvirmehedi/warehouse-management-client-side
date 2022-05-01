@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import CustomLink from "../CustomLink/CustomLink";
 
 export default function Navbar({ fixed }) {
   //   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -60,7 +60,7 @@ export default function Navbar({ fixed }) {
             className="collapse navbar-collapse flex-grow items-center"
             id="navbarSupportedContent"
           >
-            <Link
+            <CustomLink
               className="
         flex
         items-center
@@ -76,52 +76,44 @@ export default function Navbar({ fixed }) {
               <span className="text-xl font-bold text-slate-500">
                 BookHouse
               </span>
-            </Link>
+            </CustomLink>
             <ul className="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
               <li className="nav-item p-2">
-                <Link
+                <CustomLink
                   className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
                   to="/"
                 >
                   Home
-                </Link>
+                </CustomLink>
               </li>
               <li className="nav-item p-2">
-                <Link
+                <CustomLink
                   className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
                   to="/items"
                 >
                   Items
-                </Link>
+                </CustomLink>
               </li>
               <li className="nav-item p-2">
-                <Link
+                <CustomLink
                   className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
                   to="/team"
                 >
                   Team
-                </Link>
-              </li>
-              <li className="nav-item p-2">
-                <Link
-                  className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-                  to="#"
-                >
-                  Projects
-                </Link>
+                </CustomLink>
               </li>
             </ul>
           </div>
 
           <div className="flex items-center relative">
-            <Link
+            <CustomLink
               className="text-gray-500 hover:text-gray-700 focus:text-gray-700 mr-4"
               to="/login"
             >
               Login
-            </Link>
+            </CustomLink>
             <div className="dropdown relative">
-              <Link
+              <CustomLink
                 className="
           text-gray-500
           hover:text-gray-700
@@ -155,7 +147,7 @@ export default function Navbar({ fixed }) {
                 <span className="text-white bg-red-700 absolute rounded-full text-xs -mt-2.5 ml-2 py-0 px-1.5">
                   1
                 </span>
-              </Link>
+              </CustomLink>
               <ul
                 className="
       dropdown-menu
@@ -182,7 +174,7 @@ export default function Navbar({ fixed }) {
                 aria-labelledby="dropdownMenuButton1"
               >
                 <li>
-                  <Link
+                  <CustomLink
                     className="
           dropdown-item
           text-sm
@@ -199,10 +191,10 @@ export default function Navbar({ fixed }) {
                     to="#"
                   >
                     Action
-                  </Link>
+                  </CustomLink>
                 </li>
                 <li>
-                  <Link
+                  <CustomLink
                     className="
           dropdown-item
           text-sm
@@ -219,10 +211,10 @@ export default function Navbar({ fixed }) {
                     to="#"
                   >
                     Another action
-                  </Link>
+                  </CustomLink>
                 </li>
                 <li>
-                  <Link
+                  <CustomLink
                     className="
           dropdown-item
           text-sm
@@ -239,12 +231,12 @@ export default function Navbar({ fixed }) {
                     to="#"
                   >
                     Something else here
-                  </Link>
+                  </CustomLink>
                 </li>
               </ul>
             </div>
             <div className="dropdown relative">
-              <Link
+              <CustomLink
                 className="dropdown-toggle flex items-center hidden-arrow"
                 to="#"
                 id="dropdownMenuButton2"
@@ -259,7 +251,7 @@ export default function Navbar({ fixed }) {
                   alt=""
                   loading="lazy"
                 />
-              </Link>
+              </CustomLink>
               <ul
                 className="
     dropdown-menu
@@ -286,7 +278,7 @@ export default function Navbar({ fixed }) {
                 aria-labelledby="dropdownMenuButton2"
               >
                 <li>
-                  <Link
+                  <CustomLink
                     className="
         dropdown-item
         text-sm
@@ -303,10 +295,10 @@ export default function Navbar({ fixed }) {
                     to="#"
                   >
                     Action
-                  </Link>
+                  </CustomLink>
                 </li>
                 <li>
-                  <Link
+                  <CustomLink
                     className="
         dropdown-item
         text-sm
@@ -323,10 +315,10 @@ export default function Navbar({ fixed }) {
                     to="#"
                   >
                     Another action
-                  </Link>
+                  </CustomLink>
                 </li>
                 <li>
-                  <Link
+                  <CustomLink
                     className="
         dropdown-item
         text-sm
@@ -343,7 +335,7 @@ export default function Navbar({ fixed }) {
                     to="#"
                   >
                     Something else here
-                  </Link>
+                  </CustomLink>
                 </li>
               </ul>
             </div>
