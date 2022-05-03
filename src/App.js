@@ -5,6 +5,8 @@ import Items from "./components/Items/Items";
 import Login from "./components/Login/Login";
 import Navbar from "./components/Navbar/Navbar";
 import NotFound from "./components/NotFound/NotFound";
+import RequireAuth from "./components/RequireAuth/RequireAuth";
+import SignUp from "./components/SignUp/SignUp";
 
 function App() {
   return (
@@ -12,8 +14,16 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/items" element={<Items />} />
+        <Route
+          path="/items"
+          element={
+            <RequireAuth>
+              <Items />
+            </RequireAuth>
+          }
+        />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

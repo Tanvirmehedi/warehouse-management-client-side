@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import google from "../../img/google.svg";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 
 const Login = () => {
@@ -109,7 +108,7 @@ const Login = () => {
         <div className="relative w-full h-64 sm:h-96 lg:w-1/2 lg:h-full">
           <img
             className="absolute inset-0 object-cover w-full h-full"
-            src={google}
+            src="https://thumbs.dreamstime.com/b/vector-illustration-isolated-white-background-login-button-icon-126999949.jpg"
             alt=""
           />
         </div>

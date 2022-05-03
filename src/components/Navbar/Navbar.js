@@ -1,8 +1,15 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
 
 export default function Navbar({ fixed }) {
   //   const [navbarOpen, setNavbarOpen] = useState(false);
+  const handelLogout = () => {
+    signOut(auth);
+  };
+  const [user, loading, error] = useAuthState(auth);
   return (
     <div className="sticky top-0 z-50">
       <nav
@@ -244,14 +251,19 @@ export default function Navbar({ fixed }) {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <img
-                  src="https://mdbootstrap.com/img/new/avatars/2.jpg"
-                  className="rounded-full"
-                  style={{ height: "25px", width: "25px" }}
-                  alt=""
-                  loading="lazy"
-                />
+                {user ? (
+                  <button onClick={handelLogout}>SignOut</button>
+                ) : (
+                  <img
+                    src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+                    className="rounded-full"
+                    style={{ height: "25px", width: "25px" }}
+                    alt=""
+                    loading="lazy"
+                  />
+                )}
               </CustomLink>
+
               <ul
                 className="
     dropdown-menu
