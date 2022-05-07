@@ -1,17 +1,12 @@
 import React from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import google from "../../img/google.svg";
 const GoogleSignIn = () => {
-  let navigate = useNavigate();
-  let location = useLocation();
-
-  let from = location.state?.from?.pathname || "/";
   const [signInWithGoogle] = useSignInWithGoogle(auth);
+
   const handelButton = (e) => {
     signInWithGoogle();
-    navigate(from, { replace: true });
   };
   return (
     <div className="text-center my-10">

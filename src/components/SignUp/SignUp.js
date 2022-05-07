@@ -1,8 +1,29 @@
 import React from "react";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../firebase.init";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 
 const SignUp = () => {
+  const [createUserWithEmailAndPassword] =
+    useCreateUserWithEmailAndPassword(auth);
+  const [updateProfile] = useUpdateProfile(auth);
+  const handelSignupForm = async (e) => {
+    e.preventDefault();
+    const displayName = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    if (email !== "" || password !== "") {
+      await createUserWithEmailAndPassword(email, password);
+    }
+    if (displayName !== "") {
+      await updateProfile({ displayName });
+      alert("Updated profile");
+    }
+  };
   return (
     <div>
       <div>
@@ -19,7 +40,26 @@ const SignUp = () => {
               </p>
             </div>
 
-            <form action="" className="max-w-md mx-auto mt-8 mb-0 space-y-4">
+            <form
+              onSubmit={handelSignupForm}
+              className="max-w-md mx-auto mt-8 mb-0 space-y-4"
+            >
+              <div>
+                <label htmlFor="names" className="sr-only">
+                  Name
+                </label>
+
+                <div className="relative">
+                  <input
+                    type="text"
+                    className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+                    placeholder="Enter Name"
+                    name="name"
+                  />
+
+                  <span className="absolute inset-y-0 inline-flex items-center right-4"></span>
+                </div>
+              </div>
               <div>
                 <label htmlFor="email" className="sr-only">
                   Email
@@ -28,6 +68,7 @@ const SignUp = () => {
                 <div className="relative">
                   <input
                     type="email"
+                    name="email"
                     className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                     placeholder="Enter email"
                   />
@@ -50,27 +91,14 @@ const SignUp = () => {
                   </span>
                 </div>
               </div>
-              <div>
-                <label htmlFor="names" className="sr-only">
-                  Name
-                </label>
 
-                <div className="relative">
-                  <input
-                    type="text"
-                    className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
-                    placeholder="Enter Name"
-                  />
-
-                  <span className="absolute inset-y-0 inline-flex items-center right-4"></span>
-                </div>
-              </div>
               <div>
                 <label htmlFor="password" className="sr-only">
                   Password
                 </label>
                 <div className="relative">
                   <input
+                    name="password"
                     type="password"
                     className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                     placeholder="Enter password"

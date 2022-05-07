@@ -1,8 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 
 const Login = () => {
+  const [user] = useAuthState(auth);
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
+  if (user) {
+    navigate(from, { replace: true });
+  }
   return (
     <div>
       <section className="relative flex flex-wrap lg:h-screen lg:items-center">

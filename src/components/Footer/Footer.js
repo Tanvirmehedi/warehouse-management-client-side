@@ -270,7 +270,7 @@ const Footer = () => {
           <div className="pt-8 mt-12 border-t border-white/10">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
               <p className="text-xs text-center text-gray-400 lg:text-left">
-                Copyright &copy; 2022. Company Name. All rights reserved.
+                Copyright &copy; 2022. BookHouse. All rights reserved.
               </p>
 
               <nav className="flex justify-center space-x-4 text-xs text-gray-400 lg:justify-end">
