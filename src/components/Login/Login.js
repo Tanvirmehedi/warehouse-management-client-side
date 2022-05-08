@@ -1,10 +1,16 @@
 import React from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
+import {
+  useAuthState,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 
 const Login = () => {
+  const [signInWithEmailAndPassword, loading, error] =
+    useSignInWithEmailAndPassword(auth);
   const [user] = useAuthState(auth);
   let navigate = useNavigate();
   let location = useLocation();
@@ -13,6 +19,18 @@ const Login = () => {
   if (user) {
     navigate(from, { replace: true });
   }
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    if (email !== "" || password !== "") {
+      signInWithEmailAndPassword(email, password);
+    } else {
+      toast("Email Or Password Missing");
+    }
+    console.log(email, password);
+  };
+
   return (
     <div>
       <section className="relative flex flex-wrap lg:h-screen lg:items-center">
@@ -28,7 +46,10 @@ const Login = () => {
             </p>
           </div>
 
-          <form action="" className="max-w-md mx-auto mt-8 mb-0 space-y-4">
+          <form
+            onSubmit={handleLogin}
+            className="max-w-md mx-auto mt-8 mb-0 space-y-4"
+          >
             <div>
               <label htmlFor="email" className="sr-only">
                 Email
@@ -36,6 +57,7 @@ const Login = () => {
 
               <div className="relative">
                 <input
+                  name="email"
                   type="email"
                   className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                   placeholder="Enter email"
@@ -66,6 +88,7 @@ const Login = () => {
               </label>
               <div className="relative">
                 <input
+                  name="password"
                   type="password"
                   className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                   placeholder="Enter password"
