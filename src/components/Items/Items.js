@@ -6,7 +6,9 @@ const Items = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
     (async () => {
-      const { data } = await axios.get(`http://localhost:4000/items`);
+      const { data } = await axios.get(
+        `https://peaceful-sierra-96965.herokuapp.com/items`
+      );
       if (!data?.success) return toast.error(data.error);
       setItems(data.data);
     })();

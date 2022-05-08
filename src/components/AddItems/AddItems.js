@@ -19,7 +19,10 @@ const AddItems = () => {
       description,
     };
     try {
-      const { data } = await axios.post("http://localhost:4000/items", product);
+      const { data } = await axios.post(
+        "https://peaceful-sierra-96965.herokuapp.com/items",
+        product
+      );
       if (!data.success) {
         return toast.error(data.error);
       }
