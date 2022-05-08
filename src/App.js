@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AddItems from "./components/AddItems/AddItems";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Items from "./components/Items/Items";
@@ -20,6 +21,14 @@ function App() {
           element={
             <RequireAuth>
               <Items />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/additems"
+          element={
+            <RequireAuth>
+              <AddItems />
             </RequireAuth>
           }
         />
