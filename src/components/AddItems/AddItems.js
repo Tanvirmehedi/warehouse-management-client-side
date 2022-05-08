@@ -18,11 +18,15 @@ const AddItems = () => {
       supplier,
       description,
     };
-    const { data } = await axios.post("http://localhost:4000/items", product);
-    if (!data.success) {
-      return toast.error(data.error);
+    try {
+      const { data } = await axios.post("http://localhost:4000/items", product);
+      if (!data.success) {
+        return toast.error(data.error);
+      }
+      toast.success(data.message);
+    } catch (error) {
+      toast.error(error.message);
     }
-    toast.success(data.message);
   };
   return (
     <div className="container mx-auto py-5 ">
