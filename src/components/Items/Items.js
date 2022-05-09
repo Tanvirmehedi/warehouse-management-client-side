@@ -23,7 +23,8 @@ const Items = () => {
           `https://peaceful-sierra-96965.herokuapp.com/item/${id}`
         );
         if (!data?.success) return toast.error(data.error);
-        if (data.deletedCount > 0) {
+
+        if (data.data.deletedCount > 0) {
           toast.success(`Deleted!!`);
           const remaining = items.filter((item) => item._id !== id);
           setItems(remaining);
