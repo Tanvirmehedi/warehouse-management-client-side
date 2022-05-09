@@ -26,11 +26,12 @@ const SingleItem = () => {
 
     if (proceed) {
       (async () => {
-        const { update } = await axios.put(
+        const { data } = await axios.put(
           `https://peaceful-sierra-96965.herokuapp.com/item/${id}`,
           { quantity: newQuantity }
         );
-        console.log(update);
+        if (!data?.success) return toast.error(data.error);
+        toast.success(`Delivered!! ${item?.name}`);
       })();
     }
   };
