@@ -30,6 +30,8 @@ const AddItems = () => {
     } catch (error) {
       toast.error(error.message);
     }
+
+    e.target.reset();
   };
   return (
     <div className="container mx-auto py-5 ">

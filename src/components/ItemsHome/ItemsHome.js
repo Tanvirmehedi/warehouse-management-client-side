@@ -15,15 +15,15 @@ const ItemsHome = () => {
     })();
   }, []);
   return (
-    <div className="container mx-auto grid md:grid-cols-4 md:gap-10 my-10">
+    <div className="container mx-auto grid md:grid-cols-3 md:gap-10 my-10">
       {items.map((item) => {
         return (
           <div className="flex justify-center" key={item._id}>
             <div className="rounded-lg shadow-lg bg-white max-w-sm">
               <img
-                className="rounded-t-lg"
-                src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-                alt={item.imageUrl}
+                className="rounded-t-lg w-1/2 mx-auto"
+                src={item.imageUrl}
+                alt={item.name}
               />
               <div className="p-6">
                 <h5 className="text-gray-900 text-xl font-medium mb-2">
@@ -37,7 +37,7 @@ const ItemsHome = () => {
                   Supplier : {item?.supplier}
                 </p>
                 <p className="text-gray-700 text-base mb-4">
-                  {item.description}
+                  {item.description.slice(0, 100)}
                 </p>
                 <button
                   type="button"

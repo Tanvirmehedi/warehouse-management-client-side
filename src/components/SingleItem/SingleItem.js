@@ -62,15 +62,15 @@ const SingleItem = () => {
       <div className="flex justify-center">
         <div className="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
           <img
-            className=" w-full h-96 md:h-auto object-cover md:w-60 rounded-t-lg md:rounded-none md:rounded-l-lg"
-            src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg"
-            alt=""
+            className=" w-full h-96 md:h-auto  md:w-60 rounded-t-lg md:rounded-none md:rounded-l-lg"
+            src={item?.imageUrl}
+            alt={item?.name}
           />
           <div className="p-6 flex flex-col justify-start">
             <h5 className="text-gray-900 text-xl font-medium mb-2">
               {item?.name}
             </h5>
-            <p className="text-gray-700  text-base mb-4">
+            <p className="text-gray-700  text-base mb-4 text-justify">
               About: {item?.description}
             </p>
             <p className="text-gray-600 text-xl font-semibold">
@@ -85,7 +85,7 @@ const SingleItem = () => {
                   type="number"
                   name="update"
                   placeholder="Update Quantity"
-                  className="rounded-full my-3 border-2 h-9 "
+                  className="rounded-full my-3 border-2 h-9 w-full"
                 />
                 <button
                   type="submit"

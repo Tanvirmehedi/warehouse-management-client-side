@@ -32,35 +32,40 @@ const Slider = () => {
       <div className="carousel-inner relative w-full overflow-hidden">
         <div className="carousel-item active relative float-left w-full">
           <img
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
+            src="https://storyshares.blob.core.windows.net/media/contest_1_winners.jpg"
             className="block w-full h-[90vh]"
             alt="..."
           />
-          <div className="carousel-caption hidden md:block absolute text-center">
-            <h5 className="text-xl">First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+          <div className="carousel-caption hidden md:block absolute text-center text-slate-800 bg-slate-100 rounded ">
+            <h5 className="text-xl">You Are Mostly Welcome</h5>
+            <p>
+              We congratulate you to our book store you can find your book here
+            </p>
           </div>
         </div>
         <div className="carousel-item relative float-left w-full">
           <img
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
+            src="https://dispatch.barnesandnoble.com/content/dam/ccr/homepage/daily/2022/09/Gateway_Billboard_B_SummerReading-5-9.jpg"
             className="block w-full h-[90vh]"
             alt="..."
           />
-          <div className="carousel-caption hidden md:block absolute text-center">
-            <h5 className="text-xl">Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
+          <div className="carousel-caption hidden md:block absolute text-center text-slate-800 bg-slate-100 rounded ">
+            <h5 className="text-xl">You Can By It </h5>
+            <p>You can By Your Federate Book Hare</p>
           </div>
         </div>
         <div className="carousel-item relative float-left w-full">
           <img
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
+            src="https://i.ibb.co/rfSF5ZS/lf.jpg"
             className="block w-full h-[90vh] "
             alt="..."
           />
-          <div className="carousel-caption hidden md:block absolute text-center">
-            <h5 className="text-xl">Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+          <div className="carousel-caption hidden md:block absolute text-center text-slate-800 bg-slate-100 rounded ">
+            <h5 className="text-2xl">The Book You wants to know</h5>
+            <p>
+              You Can imagine this and this are tof of the book store that you
+              can find hare{" "}
+            </p>
           </div>
         </div>
       </div>

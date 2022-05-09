@@ -78,13 +78,17 @@ const Items = () => {
                     {item?.price}
                   </td>
                   <td className="px-4 py-2 text-gray-700 whitespace-nowrap">
-                    {item?.imageUrl}
+                    <img
+                      src={item?.imageUrl}
+                      className="w-[50px] mx-auto"
+                      alt={item?.name}
+                    />
                   </td>
                   <td className="px-4 py-2 text-gray-700 whitespace-nowrap">
                     {item?.supplier}
                   </td>
                   <td className="px-4 py-2 text-gray-700 whitespace-nowrap">
-                    {item?.description}
+                    {item?.description.slice(0, 20)}
                   </td>
                   <td className="px-4 py-2 text-gray-700 whitespace-nowrap">
                     <button

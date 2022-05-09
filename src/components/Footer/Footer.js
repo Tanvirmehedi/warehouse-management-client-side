@@ -19,8 +19,7 @@ const Footer = () => {
                   </h2>
 
                   <p className="mt-6 text-gray-400">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Esse non cupiditate quae nam molestias.
+                    You can submit your email address for get monthly news later
                   </p>
                 </div>
               </div>
@@ -44,7 +43,7 @@ const Footer = () => {
                       className="w-full h-12 px-6 py-3 mt-1 text-sm font-bold tracking-wide uppercase bg-red-700 sm:ml-4 sm:flex-shrink-0 sm:w-auto sm:mt-0"
                       type="submit"
                     >
-                      Sign Up
+                      Submit Email
                     </button>
                   </div>
                 </form>
