@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar/Navbar";
 import NotFound from "./components/NotFound/NotFound";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
 import SignUp from "./components/SignUp/SignUp";
+import SingleItem from "./components/SingleItem/SingleItem";
 function App() {
   return (
     <div className="App">
@@ -34,6 +35,14 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/item/:id"
+          element={
+            <RequireAuth>
+              <SingleItem />
+            </RequireAuth>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
