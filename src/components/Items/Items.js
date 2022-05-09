@@ -14,6 +14,25 @@ const Items = () => {
       setItems(data.data);
     })();
   }, []);
+
+  const handelDelete = (id) => {
+    const proceed = window.confirm("Are You Sure ?");
+    if (proceed) {
+      (async () => {
+        const { data } = await axios.delete(
+          `https://peaceful-sierra-96965.herokuapp.com/item/${id}`
+        );
+        if (!data?.success) return toast.error(data.error);
+        if (data.deletedCount > 0) {
+          toast.success(`Deleted!!`);
+          const remaining = items.filter((item) => item._id !== id);
+          setItems(remaining);
+        }
+      })();
+    } else {
+      toast("You are in safe Zone!!");
+    }
+  };
   return (
     <div className="container mx-auto my-5">
       <div className="overflow-hidden overflow-x-auto border border-gray-100 rounded">
@@ -68,6 +87,7 @@ const Items = () => {
                   </td>
                   <td className="px-4 py-2 text-gray-700 whitespace-nowrap">
                     <button
+                      onClick={() => handelDelete(item._id)}
                       type="button"
                       className="mx-1 inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out"
                     >
