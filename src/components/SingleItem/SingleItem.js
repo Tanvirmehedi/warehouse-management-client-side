@@ -17,6 +17,28 @@ const SingleItem = () => {
     })();
   }, [id]);
   const { quantity } = item;
+
+  const handelUpdateQuantity = (e) => {
+    e.preventDefault();
+    const value = e.target.update.value;
+    if (value !== "") {
+      const newQuantity = parseInt(quantity) + parseInt(value);
+      const updateProduct = { ...item, quantity: newQuantity };
+      setItem(updateProduct);
+      (async () => {
+        const { data } = await axios.put(
+          `https://peaceful-sierra-96965.herokuapp.com/item/${id}`,
+          { quantity: newQuantity }
+        );
+        if (!data?.success) return toast.error(data.error);
+        toast.success(`Update!! ${item?.name}`);
+      })();
+    } else {
+      toast.error("Input A valid Number!!");
+    }
+    e.target.reset();
+  };
+
   const handelDelivered = () => {
     const newQuantity = parseInt(quantity) - 1;
     const updateProduct = { ...item, quantity: newQuantity };
@@ -57,10 +79,26 @@ const SingleItem = () => {
             <p className="text-gray-600 text-xl font-semibold mt-5">
               Quantity: {item?.quantity} pcs
             </p>
+            <div>
+              <form onSubmit={handelUpdateQuantity}>
+                <input
+                  type="number"
+                  name="update"
+                  placeholder="Update Quantity"
+                  className="rounded-full my-3 border-2 h-9 "
+                />
+                <button
+                  type="submit"
+                  className="w-full inline-block px-6 py-2.5 bg-blue-400 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out"
+                >
+                  Update Quantity
+                </button>
+              </form>
+            </div>
             <button
               onClick={handelDelivered}
               type="button"
-              className="mt-20 inline-block px-6 py-2 border-2 border-gray-800 text-gray-800 font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+              className="mt-10 inline-block px-6 py-2 border-2 border-gray-800 text-gray-800 font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
             >
               Delivered
             </button>
