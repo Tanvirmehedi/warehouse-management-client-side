@@ -1,6 +1,4 @@
-#BookHouse
-
-## `Live Link`
+## BookHouse
 
 [Live Link](https://book-house-48f65.web.app/)
 
