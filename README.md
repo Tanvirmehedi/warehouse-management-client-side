@@ -2,7 +2,7 @@
 
 ## `Live Link`
 
-[https://book-house-48f65.web.app/](https://book-house-48f65.web.app/)
+[Live Link](https://book-house-48f65.web.app/)
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
